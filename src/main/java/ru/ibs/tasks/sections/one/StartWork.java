@@ -2,14 +2,17 @@ package ru.ibs.tasks.sections.one;
 
 import ru.ibs.utils.Utils;
 
-public class Calculator {
+/**
+ * Раздел 1: Начало работы
+ */
+public class StartWork {
 
-    Utils utils = new Utils();
 
     /**
      * Задача №1_калькулятор
      */
     public void calculator() {
+        Utils utils = new Utils();
         System.out.println("\033[0;33mДетали задания:\033[0m\n1. Ввести 2 дробных числа с клавиатуры, затем один из символов ‘+’, ‘-’, ‘*’ или ‘/’" +
                 "\n2. В зависимости от символа вывести в консоль результат выполнения соответствующей арифметической операции.\n");
         System.out.println("Введите первое целое число:");

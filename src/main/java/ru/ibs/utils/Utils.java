@@ -37,4 +37,14 @@ public class Utils {
             return getDouble();
         }
     }
+
+    public String[] getStringArray() {
+        System.out.println("Введите количество строк: ");
+        String[] stringArray = new String[getNumber()];
+        for (int i = 0; i < stringArray.length; i++) {
+            System.out.printf("Введите содержимое строки '%s': ", i + 1);
+            stringArray[i] = getLine();
+        }
+        return stringArray;
+    }
 }

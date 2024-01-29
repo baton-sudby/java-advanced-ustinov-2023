@@ -1,6 +1,7 @@
 package ru.ibs.menu;
 
-import ru.ibs.tasks.sections.one.Calculator;
+import ru.ibs.tasks.sections.one.StartWork;
+import ru.ibs.tasks.sections.two.LearnMoreAboutFamiliarTopics;
 import ru.ibs.utils.Utils;
 
 public class Menu {
@@ -11,12 +12,15 @@ public class Menu {
 
     public void mainMenu() {
         System.out.println("\n\033[0;96mМеню выбора разделов.\033[0m" +
-                "\n1.Начало работы.\n7.\033[0;31mЗавершить работу приложения.\033[0m" +
+                "\n1.Начало работы.\n2.Подробнее о знакомых темах.\n7.\033[0;31mЗавершить работу приложения.\033[0m" +
                 "\n\033[0;96mВведите цифру, соответствующую модулю, который вы хотите выбрать:\033[0m");
         int moduleNumber = utils.getNumber();
         switch (moduleNumber) {
             case 1:
                 gettingStartedMenu();
+                break;
+            case 2:
+                learnMoreAboutFamiliarTopicsMenu();
                 break;
             case 7:
                 System.out.println("Приложение заверило работу.");
@@ -32,7 +36,7 @@ public class Menu {
      * Меню раздела 'Начало работы'
      */
     private void gettingStartedMenu() {
-        Calculator calc = new Calculator();
+        StartWork calc = new StartWork();
         System.out.println("\033[0;31m_______________________________________________________________________\033[0m\n" +
                 "\033[0;96mМеню раздела 'Начало работы'.\033[0m" +
                 "\n1.Калькулятор.\n2.\033[0;32mВыйти в меню выбора модулей.\033[0m");
@@ -48,6 +52,30 @@ public class Menu {
             default:
                 System.out.printf("Задания под номером '%s' не существует. Попробуйте снова:\n", taskNumber);
                 gettingStartedMenu();
+                break;
+        }
+    }
+
+    /**
+     * Меню раздела 'Подробнее о знакомых темах'
+     */
+    private void learnMoreAboutFamiliarTopicsMenu() {
+        LearnMoreAboutFamiliarTopics sectionTwo = new LearnMoreAboutFamiliarTopics();
+        System.out.println("\033[0;31m_______________________________________________________________________\033[0m\n" +
+                "\033[0;96mМеню раздела 'Подробнее о знакомых темах'.\033[0m" +
+                "\n1.Операции калькулятора.\n2.\033[0;32mВыйти в меню выбора модулей.\033[0m");
+        taskNumber = utils.getNumber();
+        switch (taskNumber) {
+            case 1:
+                sectionTwo.findLongestString();
+                mainMenu();
+                break;
+            case 2:
+                mainMenu();
+                break;
+            default:
+                System.out.printf("Задания под номером '%s' не существует. Попробуйте снова:\n", taskNumber);
+                learnMoreAboutFamiliarTopicsMenu();
                 break;
         }
     }
