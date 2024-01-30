@@ -31,7 +31,7 @@ public class GiftUtils {
         return "Несуществующая конфета " + candy;
     }
 
-    public String getRandomTaste(String candy) {
+    public String getRandomUniqueParameter(String candy) {
         switch (candy) {
             case "Caramel":
                 return CARAMEL[(int)(Math.random() * CARAMEL.length)];

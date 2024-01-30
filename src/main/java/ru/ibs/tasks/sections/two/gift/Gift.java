@@ -19,15 +19,15 @@ public class Gift {
         String marmaladeName = "Marmalade";
 
         Candy caramel = new Caramel(giftUtils.getRandomWeight(), giftUtils.getRandomPrice(),
-                giftUtils.getRandomName(caramelName), giftUtils.getRandomTaste(caramelName));
+                giftUtils.getRandomName(caramelName), giftUtils.getRandomUniqueParameter(caramelName));
         Candy chocolate = new Chocolate(giftUtils.getRandomWeight(), giftUtils.getRandomPrice(),
-                giftUtils.getRandomName(chocolateName), giftUtils.getRandomTaste(chocolateName));
+                giftUtils.getRandomName(chocolateName), giftUtils.getRandomUniqueParameter(chocolateName));
 
         Marmalade marmalade = new Marmalade();
         marmalade.setName(giftUtils.getRandomName(marmaladeName));
         marmalade.setWeight(giftUtils.getRandomWeight());
         marmalade.setPrice(giftUtils.getRandomPrice());
-        marmalade.setTaste(giftUtils.getRandomTaste(marmaladeName));
+        marmalade.setForm(giftUtils.getRandomUniqueParameter(marmaladeName));
 
         Gift[] gift = {caramel, chocolate, marmalade};
         System.out.println("Состав подарка:");

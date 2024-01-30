@@ -1,17 +1,16 @@
 package ru.ibs.tasks.sections.two.gift.candy;
 
 public class Caramel extends Candy {
+    private final String type;
 
-    private final String taste;
-
-    public Caramel(int weight, int price, String name, String taste) {
+    public Caramel(int weight, int price, String name, String type) {
         super(weight, price, name);
-        this.taste = taste;
+        this.type = type;
     }
 
     @Override
     public String toString() {
-        return "Caramel{name= " + getName() + ", taste= " + taste + ", weight= " + getWeight() + "гр, price= " +
+        return "Caramel{name= " + getName() + ", type= " + type + ", weight= " + getWeight() + "гр, price= " +
                 getPrice() + "р}";
     }
 }
