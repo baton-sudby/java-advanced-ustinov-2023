@@ -1,5 +1,6 @@
 package ru.ibs.utils;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Utils {
@@ -46,5 +47,22 @@ public class Utils {
             stringArray[i] = getLine();
         }
         return stringArray;
+    }
+
+    public int getRandomInt(int min, int max) {
+        Random random = new Random();
+        return random.nextInt((max - min) + 1) + min;
+    }
+
+    public int[] getRandomIntArray() {
+        int[] array = new int[2000];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = getRandomInt(-10, 10);
+        }
+        return array;
+    }
+
+    public void closeScanner() {
+        scanner.close();
     }
 }

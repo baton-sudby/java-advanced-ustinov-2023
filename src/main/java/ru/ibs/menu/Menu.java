@@ -2,6 +2,7 @@ package ru.ibs.menu;
 
 import ru.ibs.tasks.sections.one.StartWork;
 import ru.ibs.tasks.sections.two.LearnMoreAboutFamiliarTopics;
+import ru.ibs.tasks.sections.two.gift.Gift;
 import ru.ibs.utils.Utils;
 
 public class Menu {
@@ -23,6 +24,7 @@ public class Menu {
                 learnMoreAboutFamiliarTopicsMenu();
                 break;
             case 7:
+                utils.closeScanner();
                 System.out.println("Приложение заверило работу.");
                 break;
             default:
@@ -61,9 +63,11 @@ public class Menu {
      */
     private void learnMoreAboutFamiliarTopicsMenu() {
         LearnMoreAboutFamiliarTopics sectionTwo = new LearnMoreAboutFamiliarTopics();
+        Gift gift = new Gift();
         System.out.println("\033[0;31m_______________________________________________________________________\033[0m\n" +
                 "\033[0;96mМеню раздела 'Подробнее о знакомых темах'.\033[0m" +
-                "\n1.Операции калькулятора.\n2.\033[0;32mВыйти в меню выбора модулей.\033[0m");
+                "\n1.Найти самую длинную сроку в массиве.\n2.Поменять местами максимальный отрицательный и " +
+                "минимальный положительный элементы в массиве.\n3.Сладкий подарок\n\033[0;32mВыйти в меню выбора модулей.\033[0m");
         taskNumber = utils.getNumber();
         switch (taskNumber) {
             case 1:
@@ -71,6 +75,14 @@ public class Menu {
                 mainMenu();
                 break;
             case 2:
+                sectionTwo.getMinPositiveAndMaxNegativeElement();
+                mainMenu();
+                break;
+            case 3:
+                gift.printGift();
+                mainMenu();
+                break;
+            case 4:
                 mainMenu();
                 break;
             default:
