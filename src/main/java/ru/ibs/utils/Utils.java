@@ -34,7 +34,8 @@ public class Utils {
             }
             return Double.parseDouble(string);
         } else {
-            System.out.printf("Неверное значение '%s'. Программа принимает только дробные числа. Попробуйте снова:\n", string);
+            System.out.printf("Неверное значение '%s'. Программа принимает только дробные числа, написанные через точку." +
+                    " Попробуйте снова:\n", string);
             return getDouble();
         }
     }
