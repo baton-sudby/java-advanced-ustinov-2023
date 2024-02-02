@@ -13,14 +13,13 @@ public class WorkWithCollections {
 
     private void addTextFromFileToList() {
         File file = Path.of("src/main/resources/test.txt").toFile();
-        try {
-            FileReader fileReader = new FileReader(file);
-            BufferedReader reader = new BufferedReader(fileReader);
+        try(FileReader fileReader = new FileReader(file);
+            BufferedReader reader = new BufferedReader(fileReader)
+        ) {
             String line;
             while ((line = reader.readLine()) != null) {
                wordsList.addAll(Arrays.asList(line.split(" ")));
             }
-            reader.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
