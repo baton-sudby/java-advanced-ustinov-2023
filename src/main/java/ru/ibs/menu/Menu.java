@@ -1,5 +1,6 @@
 package ru.ibs.menu;
 
+import ru.ibs.tasks.sections.four.WorkWithCollections;
 import ru.ibs.tasks.sections.one.StartWork;
 import ru.ibs.tasks.sections.three.runner.CalcRunner;
 import ru.ibs.tasks.sections.two.LearnMoreAboutFamiliarTopics;
@@ -14,7 +15,7 @@ public class Menu {
 
     public void mainMenu() {
         System.out.println("\n\033[0;96mМеню выбора разделов.\033[0m" +
-                "\n1.Начало работы.\n2.Подробнее о знакомых темах.\n3.ООП." +
+                "\n1.Начало работы.\n2.Подробнее о знакомых темах.\n3.ООП.\n4.Коллекции" +
                 "\n7.\033[0;31mЗавершить работу приложения.\033[0m" +
                 "\n\033[0;96mВведите цифру, соответствующую модулю, который вы хотите выбрать:\033[0m");
         int moduleNumber = utils.getNumber();
@@ -27,6 +28,9 @@ public class Menu {
                 break;
             case 3:
                 oopMenu();
+                break;
+            case 4:
+                collectionsMenu();
                 break;
             case 7:
                 utils.closeScanner();
@@ -117,6 +121,30 @@ public class Menu {
             default:
                 System.out.printf("Задания под номером '%s' не существует. Попробуйте снова:\n", taskNumber);
                 learnMoreAboutFamiliarTopicsMenu();
+                break;
+        }
+    }
+
+    /**
+     * Меню раздела 'Коллекции'
+     */
+    private void collectionsMenu() {
+        WorkWithCollections withCollections = new WorkWithCollections();
+        System.out.println("\033[0;31m_____________________________________________________________________\033[0m\n" +
+                "\033[0;96mМеню раздела 'Коллекции'.\033[0m\n1.Сортировка слов прочитанных из файла.\n" +
+                "\033[0;32mВыйти в меню выбора модулей.\033[0m");
+        taskNumber = utils.getNumber();
+        switch (taskNumber) {
+            case 1:
+                withCollections.subTaskFive();
+                mainMenu();
+                break;
+            case 2:
+                mainMenu();
+                break;
+            default:
+                System.out.printf("Задания под номером '%s' не существует. Попробуйте снова:\n", taskNumber);
+                collectionsMenu();
                 break;
         }
     }

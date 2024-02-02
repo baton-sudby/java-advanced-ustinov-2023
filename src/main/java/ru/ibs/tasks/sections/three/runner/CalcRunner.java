@@ -5,6 +5,9 @@ import ru.ibs.utils.Utils;
 
 public class CalcRunner {
 
+    /**
+     * Здание №4_ООП
+     */
     public void calculate() {
         CalculatorOOP calculatorOOP = new CalculatorOOP();
         Utils utils = new Utils();
