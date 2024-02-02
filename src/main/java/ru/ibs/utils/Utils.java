@@ -40,6 +40,17 @@ public class Utils {
         }
     }
 
+    public double getDoubleException() {
+        String string = getLine();
+        try {
+            return Double.parseDouble(string);
+        } catch (ArithmeticException | NumberFormatException e) {
+            System.out.printf("Неверное значение '%s'. Программа принимает только дробные числа, написанные через точку." +
+                    " Попробуйте снова:\n", string);
+            return getDoubleException();
+        }
+    }
+
     public String[] getStringArray() {
         System.out.println("Введите количество строк: ");
         String[] stringArray = new String[getNumber()];
