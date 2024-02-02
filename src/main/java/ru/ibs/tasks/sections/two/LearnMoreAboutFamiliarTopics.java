@@ -35,11 +35,11 @@ public class LearnMoreAboutFamiliarTopics {
                 "\n2. Нужно найти максимальный отрицательный и минимальный положительный элементы массива. " +
                 "Поменять их местами.\n");
         int[] array = utils.getRandomIntArray();
-        int maxNegativeIndex = 0;
+        int maxNegativeIndex = -1;
         int minPositiveIndex = -1;
         int temp;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] < 0 && array[i] < array[maxNegativeIndex]) {
+            if (array[i] < 0 && (maxNegativeIndex == -1 || array[i] > array[maxNegativeIndex])) {
                 maxNegativeIndex = i;
             }
             if (array[i] > 0 && (minPositiveIndex == -1 || array[i] < array[minPositiveIndex])) {

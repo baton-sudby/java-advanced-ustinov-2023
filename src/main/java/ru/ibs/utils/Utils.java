@@ -67,7 +67,7 @@ public class Utils {
     }
 
     public int[] getRandomIntArray() {
-        int[] array = new int[2000];
+        int[] array = new int[20];
         for (int i = 0; i < array.length; i++) {
             array[i] = getRandomInt(-10, 10);
         }

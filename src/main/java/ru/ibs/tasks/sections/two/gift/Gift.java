@@ -7,7 +7,6 @@ import ru.ibs.tasks.sections.two.gift.candy.Marmalade;
 
 public class Gift {
 
-
     /**
      * Задание №3_Массивы. Сладкий подарок
      */
@@ -20,14 +19,24 @@ public class Gift {
         chocolate = chocolate.createCandy();
         marmalade = marmalade.createCandy();
 
+        double totalWeight = 0.0;
+        double totalPrice = 0.0;
         Gift[] gift = {caramel, chocolate, marmalade};
         System.out.println("Состав подарка:");
         for (Gift candy: gift) {
             System.out.println(candy);
+            totalWeight += candy.getWeight((Candy) candy);
+            totalPrice += candy.getPrice((Candy) candy);
         }
         System.out.println(
-                "Общий вес подарка: " + (caramel.getWeight() + chocolate.getWeight() + marmalade.getWeight()) + "гр\n" +
-                "Общая стоимость подарка: " + (caramel.getPrice() + chocolate.getPrice() + marmalade.getPrice()) + "р");
+                "Общий вес подарка: " + totalWeight + "гр\n" + "Общая стоимость подарка: " + totalPrice + "р");
+    }
 
+    private double getWeight(Candy candy) {
+        return candy.getWeight();
+    }
+
+    private double getPrice(Candy candy) {
+        return candy.getPrice();
     }
 }
