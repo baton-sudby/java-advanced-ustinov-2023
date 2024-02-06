@@ -28,7 +28,10 @@ public class CalcRunnerException {
             System.out.println("Вы ввели неверный символ: " + operation + ". Допустимые символы: ‘+’, ‘-’, ‘*’, ‘/’" +
                     "\nПопробуйте снова.");
             calculate();
-        }
+        } catch (ArithmeticException e) {
+            System.out.println("Вы пытаетесь делить на 0, это запрещено.\nПопробуйте снова.");
+            calculate();
+    }
         System.out.printf("Результат задачи: %s " + operation + " %s = %.4f", firstNumber, secondNumber, result);
     }
 }

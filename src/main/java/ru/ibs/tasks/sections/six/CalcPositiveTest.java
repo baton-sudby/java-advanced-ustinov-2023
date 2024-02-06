@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Задание №7_Unit тесты
  */
-public class CalculatorTest {
+public class CalcPositiveTest {
     private final CalcRunnerTest calcRunnerTest = new CalcRunnerTest();
 
     @Test
