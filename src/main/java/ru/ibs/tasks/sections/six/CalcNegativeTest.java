@@ -3,6 +3,8 @@ package ru.ibs.tasks.sections.six;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.InputMismatchException;
+
 /**
  * Задание №7_Unit тесты
  */
@@ -11,19 +13,16 @@ public class CalcNegativeTest {
 
     @Test
     public void addsTwoNumbersNegativeInvalidOperation() {
-        Assertions.assertEquals(10.0, calcRunnerTest.calculate(2.0, 8.0, ')'),
-                "Результат сложения не верный");
+        Assertions.assertThrows(InputMismatchException.class, () -> calcRunnerTest.calculate(2.0, 8.0, ')'));
     }
 
     @Test
     public void subtractsTwoNumbersNegativeInvalidValue() {
-        Assertions.assertEquals(10.0, calcRunnerTest.calculate(2.0, Integer.parseInt("-"), '-'),
-                "Результат сложения не верный");
+        Assertions.assertThrows(NumberFormatException.class, () -> calcRunnerTest.calculate(2.0, Integer.parseInt("-"), '-'));
     }
 
     @Test
     public void dividesByZero() {
-        Assertions.assertEquals(13.0, calcRunnerTest.calculate(65.0, 0.0, '/'),
-                "Результат деления не верный");
+        Assertions.assertThrows(ArithmeticException.class, () -> calcRunnerTest.calculate(65.0, 0.0, '/'));
     }
 }
